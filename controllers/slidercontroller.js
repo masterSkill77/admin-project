@@ -1,26 +1,17 @@
-const slider=require('../models/slider')
+const slider = require('../models/slider');
 
-exports.addslider=async(req,res)=>{
+exports.addslider = async (req, res) => {
+	res.render('admin/addSlider.ejs');
+};
 
-res.render('admin/addSlider.ejs')
+exports.viewslider = async (req, res) => {
+	const slidrecord = await slider.findAll();
 
+	res.render('admin/viewSlider.ejs', { slidrecord });
+};
 
-}
-
-
-
-exports.viewslider=async(req,res)=>{
-
-    const slidrecord=await slider.find()
-
-res.render('admin/viewSlider.ejs', {slidrecord})
-
-}
-
-exports.sliderDelete=async(req,res)=>{
-const sliderId=req.params.id;
-await slider.findByIdAndDelete(sliderId)
-res.redirect('/admin/viewslider')
-
-
-}
+exports.sliderDelete = async (req, res) => {
+	const sliderId = req.params.id;
+	await slider.findByIdAndDelete(sliderId);
+	res.redirect('/admin/viewslider');
+};

@@ -25,12 +25,11 @@ app.post('/api/submit', upload.single('designImage'), async (req, res) => {
 	const designImage = req.file ? `/uploads/${req.file.filename}` : null;
 
 	try {
-		const newCarpet = new rugs({
+		const newCarpet = new rugs.build({
 			carpetName,
 			designImage,
 			carpetSizeLength: length,
 			carpetSizeWidth: width,
-			carpetSize: { length, width },
 			yourName,
 			yourEmail,
 			yourMobileNumber,
