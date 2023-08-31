@@ -161,11 +161,13 @@ const listener = app.listen(port, function () {
 	console.log(listener.address().port);
 });
 
-// Récupère les interfaces réseau
-const interfaces = os.networkInterfaces();
+const IP = require('ip');
 
-console.log(interfaces);
+// Récupère l'adresse IP de l'interface réseau par défaut
+const ip = IP.address();
 
+// Affiche l'adresse IP
+console.log(ip);
 // app.use(session({
 //     secret: 'your-secret-key',
 //     resave: false,
