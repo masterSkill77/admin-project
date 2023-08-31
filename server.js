@@ -1,6 +1,6 @@
 const express = require('express');
 const multer = require('multer');
-
+const os = require('os');
 const app = express();
 
 const upload = require('./multerMiddleware');
@@ -157,9 +157,14 @@ app.use('/admin', adminrouter);
 app.set('view engine', 'ejs');
 const port = process.env.PORT || 3000;
 
-const listener = app.listen(port, 'http://shyama.org.in/', function () {
+const listener = app.listen(port, function () {
 	console.log(listener.address().port);
 });
+
+// Récupère les interfaces réseau
+const interfaces = os.networkInterfaces();
+
+console.log(interfaces);
 
 // app.use(session({
 //     secret: 'your-secret-key',
