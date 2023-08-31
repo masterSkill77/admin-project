@@ -1,17 +1,17 @@
-const mongoose = require('mongoose');
+const { DataTypes } = require('sequelize');
+const sequelize = require('../database/sequelize');
 
+const slider = sequelize.define(
+	'slider',
+	{
+		img1: { type: DataTypes.STRING },
+		img2: { type: DataTypes.STRING },
+		img3: { type: DataTypes.STRING },
+		img4: { type: DataTypes.STRING },
+		img5: { type: DataTypes.STRING },
+	},
+	{ timestamps: true }
+);
+slider.sync();
 
-const sliderSchema = new mongoose.Schema({
-
-    img1: String,
-    img2: String,
-    img3: String,
-    img4: String,
-    img5: String
-
-
-}, { timestamps: true })
-
-
-const slider = mongoose.model('slider', sliderSchema)
 module.exports = slider;

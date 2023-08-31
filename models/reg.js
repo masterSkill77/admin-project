@@ -1,11 +1,9 @@
-const mongoose=require('mongoose')
+const { DataTypes } = require('sequelize');
+const sequelize = require('./../database/sequelize');
 
-
-const regSchema=mongoose.Schema({
-       username:String,
-       password:String
-})
-
-
-
-module.exports=mongoose.model('reg',regSchema)
+const reg = sequelize.define('reg', {
+	username: { type: DataTypes.STRING },
+	password: { type: DataTypes.STRING },
+});
+reg.sync();
+module.exports = reg;

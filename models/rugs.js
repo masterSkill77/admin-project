@@ -1,37 +1,36 @@
-const mongoose = require('mongoose');
+const { DataTypes } = require('sequelize');
+const sequelize = require('./../database/sequelize');
 
-const carpetSchema = new mongoose.Schema({
-    carpetName: {
-        type: String,
-        required: true
-    },
-    designImage: {
-        type: String
-    },
-    carpetSize: {
-        length: {
-            type: Number,
-            required: true
-        },
-        width: {
-            type: Number,
-            required: true
-        }
-    },
-    yourName: {
-        type: String,
-        required: true
-    },
-    yourEmail: {
-        type: String,
-        required: true
-    },
-    yourMobileNumber: {
-        type: String,
-        required: true
-    }
+const rugs = sequelize.define('carpet', {
+	carpetName: {
+		type: DataTypes.STRING,
+		required: true,
+	},
+	designImage: {
+		type: DataTypes.STRING,
+	},
+	carpetSizeLength: {
+		type: DataTypes.INTEGER,
+		required: true,
+	},
+	carpetSizeWidth: {
+		type: DataTypes.INTEGER,
+		required: true,
+	},
+	yourName: {
+		type: DataTypes.STRING,
+		required: true,
+	},
+	yourEmail: {
+		type: DataTypes.STRING,
+		required: true,
+	},
+	yourMobileNumber: {
+		type: DataTypes.STRING,
+		required: true,
+	},
 });
 
-const rugs = mongoose.model('rugs', carpetSchema);
+rugs.sync();
 
 module.exports = rugs;
