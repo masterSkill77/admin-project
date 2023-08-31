@@ -155,7 +155,11 @@ app.use(frontendrouter);
 app.use('/admin', adminrouter);
 
 app.set('view engine', 'ejs');
-app.listen(5000);
+const port = process.env.PORT || 3000;
+
+const listener = app.listen(port, 'http://shyama.org.in/', function () {
+	console.log(listener.address().port);
+});
 
 // app.use(session({
 //     secret: 'your-secret-key',
