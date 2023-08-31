@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shyama. Kush's Seat</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Farsan&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Beth+Ellen&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        *{
+    font-family: 'Farsan', cursive;
+}
+
+#header{
+    background: linear-gradient(to right,#060079,#2b32f3cb);
+}
+
+
+
+#header h1{
+    color: white;
+    font-weight: bolder;
+}
+
+#header ul li a{
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    font-size: x-large;
+    font-family: 'Farsan', cursive;
+    transition-property: color;
+    transition-duration: 2s;
+}
+
+#header ul li a:hover{
+    color: rgb(255, 255, 0);
+}
+
+#header .bi-list{
+    color: rgb(255, 255, 0);
+    font-size: 30px;
+}
+
+#header .navbar-toggler{
+   border: 1px solid blue;
+}
+
+#header .navbar-toggler:hover{
+    border: 2px solid rgb(0, 217, 255);
+ }
+
+
+        .main-image-container {
+            position: relative;
+        }
+    
+        .main-image {
+            height: 300px;
+            width: 400px;
+            transition: transform 0.3s ease;
+        }
+    
+        .thumbnail-images {
+            display: flex;
+            justify-content: center; /* Center the thumbnails horizontally */
+            align-items: flex-start; /* Align thumbnails to the top */
+            gap: 10px; /* Add some spacing between thumbnails */
+            margin-top: 10px;
+        }
+    
+        .thumbnail {
+            height: 50px;
+            width: 50px;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+        }
+    
+        .selected-thumbnail {
+            opacity: 0.7;
+        }
+    
+        .product-details {
+            margin-top: 20px;
+        }
+
+        #footer{
+    background: linear-gradient(to right,#060079,#2b32f3cb);
+}
+
+#footer h2{
+    color: white;
+    font-family: 'Farsan', cursive;
+    font-weight: bold;
+    text-align: center;
+}
+
+#footer span{
+    color: white;
+    font-size: 25px;
+}
+
+#footer p{
+    color: rgb(210,210,203);
+}
+
+#footer h3{
+    font-weight: bolder;
+    font-size: 30px;
+    color: white;
+}
+
+#footer a i{
+    color: rgb(0, 255, 234);
+    padding: 0px 15px;
+    margin-right: 24px ;
+    font-size: 30px;
+    text-align: center;
+}
+
+#copyright{
+    background: linear-gradient(to right,#000000,#583a3a58);
+    margin-top: 1px;
+}
+
+#copyright h4{
+      color: white;
+      
+}
+    </style>
+    
+    
+</head>
+
+<body>
+     <!--This is a Header Section Code-->
+     <section id="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <nav class="navbar navbar-expand-lg">
+                        <div class="container-fluid">
+                            <h1>Shyama. Kush's Seat</h1>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                                <i class="bi bi-list"></i>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav ms-auto">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page" href="/">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/about">About Us</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/product">Products</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/custom">Customize Your Rugs</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/contact">Contact Us</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     
+
+
+     <section id="product-details ">
+        <h1 class="text-center text-danger mt-5">Product <span class="text-primary">Details</span></h1>
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-lg-6">
+                    <!-- Main Image -->
+                    <div class="main-image-container">
+                        <img src="/productsi/<%= Product.frontImage %>" class="img-fluid main-image" alt="Product Image">
+                    </div>
+            
+                    <!-- Thumbnail Images -->
+                    <div class="thumbnail-images">
+                        <img src="/productsi/<%= Product.frontImage %>" class="thumbnail selected-thumbnail" alt="Product Image">
+                        <img src="/productsi/<%= Product.sideImage %>" class="thumbnail" alt="Product Image">
+                        <img src="/productsi/<%= Product.backImage %>" class="thumbnail" alt="Product Image">
+                    </div>
+            
+                    <!-- Product Details -->
+                    <div class="product-details">
+                        <!-- <h5>Quality : <span class="badge bg-secondary"><%= Product.subCategory %></span></h5> -->
+                        <h5>Design Code : <span class="badge bg-secondary"><%= Product.code %></span></h5>
+                        <h5>Color : <span class="badge bg-secondary"><%= Product.style %></span></h5>
+                        <h5>Size : <span class="badge bg-secondary"><%= Product.size %></span></h5>
+                        <h5>Description : <span class="badge bg-secondary"><%= Product.description %></span></h5>
+                    </div>
+                </div>
+            
+            
+
+                <div class="col-lg-6">
+                    <form action="/orderpost" method="post">
+                        <div class="mb-3">
+                            <label for="orderType" class="form-label">Order For*</label>
+                            <select class="form-select" id="orderType" name="orderType" required>
+                                <option selected>Choose</option>
+                                <option value="quotation">Quotation</option>
+                                <option value="sample">Sample</option>
+                            </select>
+                        </div>
+                        <!-- Other form elements go here -->
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="designCode">Design Code</label>
+                                <input type="text" id="designCode"  name="designCode"   class="form-control" placeholder="designCode" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="construction">Construction</label>
+                                <input type="text" class="form-control" id="construction"  name="construction" placeholder="Quality"   required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="firstName">First Name:</label>
+                                <input type="text" class="form-control" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="lastName">Last Name:</label>
+                                <input type="text" class="form-control" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+                        <label for="quantity">Quantity:</label>
+                        <input type="number" class="form-control" id="quantity" name="quantity" required>
+                        <label for="customerName">Customer Name:</label>
+                        <input type="text" class="form-control" id="customerName" name="customerName" required>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="material">Material*</label>
+                                <select class="form-select" id="material" name="material" required>
+                                    <option selected>Choose</option>
+                                    <option value="Viscose Wool">Viscose Wool</option>
+                                    <option value="Indial Wool">Indial Wool</option>
+                                    <option value="Jute">Jute</option>
+                                    <option value="New Zealand Wool">New Zealand Wool</option>
+                                    <option value="Leather">Leather</option>
+                                    <option value="Polyester Yarn">Polyester Yarn</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="color-changes">Color Changes*</label>
+                                <select class="form-select" id="colorChanges" name="colorChanges" required>
+                                    <option selected>Choose</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="email">Email Id:</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="mobile">Mobile/Whatsapp:</label>
+                                <input type="tel" class="form-control" id="mobile" name="mobile" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="city">City*:</label>
+                                <input type="text" class="form-control" id="city" name="city" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="zipCode">Zip Code*:</label>
+                                <input type="text" class="form-control" id="zipCode" name="zipCode" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="state">State*:</label>
+                                <input type="text" class="form-control" id="state" name="state" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="country">Country*:</label>
+                                <input type="text" class="form-control" id="country" name="country" required>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary mt-2">Submit Order</button>
+                        <a href="/product" class="btn btn-warning mt-2">Back To Collection</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--This is Footer Section-->
+    <section id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mt-2 mb-2">
+                    <h3>Shyama. Kush's Seat</h3>
+                    <p class="mt-2">WELCOME TO,
+                        Shyama. Kush's Seat,
+                        We are Manufacturers and Exporters of Hand Tufted, Kush's Seat, Hand Knotted, Hand Loom, Flatweave and all kind of Rugs and Carpets etc...</p>
+                </div>
+                <div class="col-md-4 mt-2 mb-2">
+                    <h2>Shyama. Kush's Seat</h2>
+                    <p><span><i class="bi bi-buildings"></i></span> Clans India Mulla Talab Station Road,
+    Bhadohi 221401</p>
+                   <p><span><i class="bi bi-telephone"></i></span>  0141-34345656</p>
+                   <p><span><i class="bi bi-phone"></i></span>  +917654985789</p>
+                   <p><span><i class="bi bi-envelope"></i></span>  contact@clansindia.in</p>
+                </div>
+                <div class="col-md-4 mt-2 mb-2">
+                    <h2>Our Social Networks</h2>
+                    <a href=""><i class="bi bi-facebook"></i></a>
+                   <a href=""><i class="bi bi-whatsapp"></i></a> 
+                   <a href=""><i class="bi bi-instagram"></i></a>
+                   <a href=""><i class="bi bi-google"></i></a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!--This is a Copyroght Footer Section Code-->
+     <section id="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center mt-3 ">
+                <h4>© Copyright Shyama. Kush's Seat All Rights Reserved</h4>
+                </div>
+                <div class="col-md-6 text-center mt-3">
+                    <h4>Devlop & Designed by TDS IT Solution</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
+
+        <script>
+            const mainImage = document.querySelector('.main-image');
+            const thumbnailImages = document.querySelectorAll('.thumbnail');
+        
+            thumbnailImages.forEach(thumbnail => {
+                thumbnail.addEventListener('click', () => {
+                    mainImage.src = thumbnail.src;
+                    thumbnailImages.forEach(thumb => {
+                        thumb.classList.remove('selected-thumbnail');
+                    });
+                    thumbnail.classList.add('selected-thumbnail');
+                });
+            });
+        </script>
+</body>
+
+</html>

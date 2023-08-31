@@ -1,0 +1,9 @@
+h2{
+    text-align: center;
+}
+
+#login{
+    display: flex;
+    align-items: center;
+    height: 550px;
+}
